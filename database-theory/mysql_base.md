@@ -167,17 +167,6 @@ END
 
 * group by 和 where的谁先执行?我猜是where
 
-
-
-## some trick
-1. 一登录就切换数据库
-`mysql -u root -D dbname -p` #貌似不好使
-2. 载入sql
-`source /home/xiaoming/test.sql`
-3. 不进入mysql客户端就输入指令
-`mysql -u root -p -e "select 'hello'"`
-
-
 ## json
 
 
@@ -259,8 +248,18 @@ DELIMITER： 重定义结束符
 1. 进入mysql交互界面, `source /home/userName/test.sql`
 2. `$ mysql -u root -p -e "source /home/userName/test.sql"`
 
-
+## some trick
+1. 一登录就切换数据库
+`mysql -u root -D dbname -p` #貌似不好使
+2. 载入sql
+`source /home/xiaoming/test.sql`
+3. 不进入mysql客户端就输入指令
+`mysql -u root -p -e "select 'hello'"`
+4. 改变mysql进入的权限(不用加sudo)
+`use mysql;`
+`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '复杂一点的密码';`
+`flush privileges;`
 
 ## 配置（无密码登录）
-mysql_config_editor set --login-path=xiaoao --host=localhost --user=root --password --port=3306
-mysql --login-path=xiaoao
+`mysql_config_editor set --login-path=xiaoao --host=localhost --user=root --password --port=3306`
+`mysql --login-path=xiaoao`
