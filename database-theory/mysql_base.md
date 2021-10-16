@@ -60,6 +60,13 @@ describe 可以简写为 desc
 >> 如果后面跟多个col会怎么样? 
 * 会将多个col的组合起来作为原来的col
 
+## update 
+`update tableName set name="Lucy", addr='Shanghai'`
+
+## delete
+`delete from tableName where name="Lucy"`
+
+
 ## where
 1. = > <
 2. AND `boolean_expression_1 AND boolean_expression_2` OR
